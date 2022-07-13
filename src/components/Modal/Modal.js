@@ -13,12 +13,7 @@ export const Modal = ({ title, children, open, controls = [] }) => {
         {controls.map((control, controlIndex) => (
           <Button
             key={controlIndex}
-            variant={control.variant}
-            onClick={control.onClick}
-            label={control.label}
-            loadingLabel={control.loadingLabel}
-            loading={control.loading}
-            disabled={control.disabled}
+            {...control}
           />
         ))}
       </ModalBS.Footer>
