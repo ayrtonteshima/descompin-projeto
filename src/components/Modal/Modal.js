@@ -2,6 +2,7 @@ import ModalBS from 'react-bootstrap/Modal';
 import { Button } from '../Button/Button';
 
 export const Modal = ({ title, children, open, controls = [] }) => {
+  console.log(controls);
   return (
     <ModalBS show={open} onHide={() => {}}>
       <ModalBS.Header closeButton>
@@ -14,10 +15,10 @@ export const Modal = ({ title, children, open, controls = [] }) => {
             key={controlIndex}
             variant={control.variant}
             onClick={control.onClick}
-            label="Salvar"
-            loadingLabel="Salvando"
-            loading={true}
-            disabled={true}
+            label={control.label}
+            loadingLabel={control.loadingLabel}
+            loading={control.loading}
+            disabled={control.disabled}
           />
         ))}
       </ModalBS.Footer>
