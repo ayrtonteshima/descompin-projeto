@@ -9,10 +9,11 @@ import { HomePage } from './pages/Home/HomePage';
 import { MinhasPastasPage } from "./pages/MinhasPastas/MinhasPastasPage";
 import { HeaderPartial } from './partials/HeaderPartial/HeaderPartial';
 
-import { saveFolder } from './services/pinService';
+import { saveFolder, savePinInFolder } from './services/pinService';
 
 function App() {
-  saveFolder('JavaScript');
+  //saveFolder('JavaScript');
+  savePinInFolder("f901-fd22", "pin321");
   return (
     <BrowserRouter>
       <div className="App">
