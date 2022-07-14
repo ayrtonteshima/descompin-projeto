@@ -13,7 +13,7 @@ function App() {
         <HeaderPartial />
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/minhas-pastas" element={<h1>Minhas pastas</h1>} />
+          <Route path="/minhas-pastas" element={<h1>Minhas pastas!!!!</h1>} />
         </Routes>
       </div>
     </BrowserRouter>
