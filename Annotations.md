@@ -15,6 +15,11 @@
     id: "3",
     name: "Programação",
     pins: ["pin1", "pin2", "pin3"]
+  },
+  {
+    id: "4",
+    name: "Programação",
+    pins: []
   }
 ]
 ```
