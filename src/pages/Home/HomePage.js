@@ -6,9 +6,10 @@ import { Card } from '../../components/Card/Card';
 import { ModalSavePin } from '../../containers/ModalSavePin/ModalSavePin';
 import { ModalCreateFolder } from '../../containers/ModalCreateFolder/ModalCreateFolder';
 import { Notification } from '../../components/Notification/Notification';
-import { Context } from '../../store/AppContext';
+import { useAppContext } from '../../store/AppContext';
 
 export const HomePage = () => {
+  const value = useAppContext();
   return (
     <div>
       <ModalSavePin open={false} />
@@ -18,12 +19,8 @@ export const HomePage = () => {
         onClose={() => {
           console.log('Clicou em fechar')
         }}
-      />
-      <Context.Consumer>
-        {(value) => (
-          <span>{value.name}</span>
-        )}
-      </Context.Consumer>
+      /> 
+      <span>{value.name}</span>
       <Container fluid>
         <Row>
           <Col xs={12} md={2}><Card title="Matemática" image="https://picsum.photos/200/300?53" total={0} /></Col>
