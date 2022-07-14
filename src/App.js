@@ -5,6 +5,7 @@ import {
 } from "react-router-dom";
 
 import { HomePage } from './pages/Home/HomePage';
+import { MinhasPastasPage } from "./pages/MinhasPastas/MinhasPastasPage";
 import { HeaderPartial } from './partials/HeaderPartial/HeaderPartial';
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
         <HeaderPartial />
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/minhas-pastas" element={<h1>Minhas pastas!!!!</h1>} />
+          <Route path="/minhas-pastas" element={<MinhasPastasPage />} />
         </Routes>
       </div>
     </BrowserRouter>
