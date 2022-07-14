@@ -18,3 +18,19 @@
   }
 ]
 ```
+
+### Estado global
+
+```
+{
+  folders: [],
+  activePin: "",
+  modal: "savePin" | "createFolder"
+}
+```
+
+abreModalPin() -> { folders: [], activePin: "123", modal: "savePin" }
+
+closeModal() -> { folders: [], modal: null, activePin: null }
+
+savePinInFolder("folder", "pin1") -> { folders: [ { id: "pin }] }
