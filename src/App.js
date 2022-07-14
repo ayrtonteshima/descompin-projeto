@@ -1,11 +1,22 @@
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
+
 import { HomePage } from './pages/Home/HomePage';
 import { HeaderPartial } from './partials/HeaderPartial/HeaderPartial';
 function App() {
   return (
-    <div className="App">
-      <HeaderPartial />
-      <HomePage />
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <HeaderPartial />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/minhas-pastas" element={<h1>Minhas pastas</h1>} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 
