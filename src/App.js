@@ -14,7 +14,7 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <AppContext>
+        <AppContext initialState={{ name: 'Ayrton J' }}>
           <HeaderPartial />
           <Routes>
             <Route path="/" element={<HomePage />} />

@@ -9,7 +9,7 @@ import { Notification } from '../../components/Notification/Notification';
 import { useAppContext } from '../../store/AppContext';
 
 export const HomePage = () => {
-  const value = useAppContext();
+  const { state } = useAppContext();
   return (
     <div>
       <ModalSavePin open={false} />
@@ -20,7 +20,7 @@ export const HomePage = () => {
           console.log('Clicou em fechar')
         }}
       /> 
-      <span>{value.name}</span>
+      <span>{state.name}</span>
       <Container fluid>
         <Row>
           <Col xs={12} md={2}><Card title="Matemática" image="https://picsum.photos/200/300?53" total={0} /></Col>
