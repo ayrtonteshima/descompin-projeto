@@ -10,11 +10,18 @@ import { MinhasPastasPage } from "./pages/MinhasPastas/MinhasPastasPage";
 import { HeaderPartial } from './partials/HeaderPartial/HeaderPartial';
 import { AppContext } from './store/AppContext';
 
+const initialState = {
+  activePinId: null,
+  mode: null,
+  folders: [],
+  type: null,
+};
+
 function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <AppContext initialState={{ name: 'Ayrton J' }}>
+        <AppContext initialState={initialState}>
           <HeaderPartial />
           <Routes>
             <Route path="/" element={<HomePage />} />
