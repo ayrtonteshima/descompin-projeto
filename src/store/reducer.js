@@ -12,6 +12,15 @@ export function reducer(state, action) {
         ...state,
         mode: null
       };
+    case types.fetchFoldersInitType:
+      return {
+        ...state
+      }
+    case types.fetchFoldersSuccessType:
+      return {
+        ...state,
+        folders: action.payload
+      }
     default: 
       return state;
   }
