@@ -5,6 +5,11 @@ export function reducer(state, action) {
         ...state,
         mode: 'savePin'
       }
+    case 'close modals':
+      return {
+        ...state,
+        mode: null
+      };
     default: 
       return state;
   }
