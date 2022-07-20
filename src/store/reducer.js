@@ -26,7 +26,17 @@ export function reducer(state, action) {
       return {
         ...state,
         mode: 'createFolder'
+      };
+    
+    case types.saveFolderSuccessType:
+      return {
+        ...state,
+        folders: [
+          ...state.folders,
+          action.payload
+        ]
       }
+    
     default: 
       return state;
   }

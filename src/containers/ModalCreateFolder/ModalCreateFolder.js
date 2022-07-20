@@ -2,24 +2,26 @@ import { useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import { Modal } from '../../components/Modal/Modal';
 import { useAppContext } from '../../store/AppContext';
-import { closeModalsAction } from '../../store/actions';
+import { closeModalsAction, saveFolderAction } from '../../store/actions';
 
 export const ModalCreateFolder = ({ open }) => {
   const { state, dispatch } = useAppContext();
   const [ folderName, setFolderName ] = useState('');
 
+  const handleClose = () => {
+    dispatch(closeModalsAction());
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Fez o submit', folderName)
+    saveFolderAction(dispatch, folderName);
+    handleClose();
   };
 
   const handleChange = (e) => {
     setFolderName(e.target.value);
   };
-
-  const handleClose = () => {
-    dispatch(closeModalsAction());
-  }
 
   return (
     <Modal
