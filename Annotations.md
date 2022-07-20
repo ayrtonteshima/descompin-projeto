@@ -29,8 +29,9 @@
 ```
 {
   folders: [],
-  activePin: "",
-  modal: "savePin" | "createFolder"
+  activePinId: "",
+  mode: "savePin" | "createFolder",
+  type: null
 }
 ```
 

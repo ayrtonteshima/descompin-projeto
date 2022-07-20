@@ -1,17 +1,11 @@
 export function reducer(state, action) {
   switch (action.type) {
-    case 'OPEN_MODAL':
+    case 'open modal save pin':
       return {
         ...state,
+        mode: 'savePin'
       }
-    case 'SAVE_PIN':
-      return {
-        ...state,
-      }
-    case 'CLOSE _PIN':
-      return {
-        ...state,
-      }
+    default: 
+      return state;
   }
-  return state;
 }
