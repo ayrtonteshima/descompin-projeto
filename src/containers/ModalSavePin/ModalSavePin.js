@@ -24,6 +24,10 @@ export const ModalSavePin = ({ open }) => {
     fetchFoldersAction(dispatch);
   }, [])
 
+  useEffect(() => {
+    console.log(state);
+  }, [state])
+
   return (
     <Modal
       title="Salvar pin"

@@ -6,7 +6,8 @@ export function reducer(state, action) {
       return {
         ...state,
         type: types.openModalSavePinType,
-        mode: 'savePin'
+        mode: 'savePin',
+        activePinId: action.payload
       }
     case types.closeModalsType:
       return {

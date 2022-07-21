@@ -33,8 +33,8 @@ export const HomePage = () => {
       )} 
       <Container fluid>
         <Row>
-          <Col xs={12} md={2}><CardContainer title="Matemática" image="https://picsum.photos/200/300?53" total={0} /></Col>
-          <Col xs={12} md={2}><CardContainer title="Trigonometria" image="https://picsum.photos/200/300?13" total={1} /></Col>
+          <Col xs={12} md={2}><CardContainer id="123" title="Matemática" image="https://picsum.photos/200/300?53" total={0} /></Col>
+          <Col xs={12} md={2}><CardContainer id="133" title="Trigonometria" image="https://picsum.photos/200/300?13" total={1} /></Col>
         </Row>
       </Container>  
     </div>
