@@ -26,7 +26,14 @@ export const ModalSavePin = ({ open }) => {
 
   const handleClick = (folderId) => {
     savePinInFolderAction(dispatch, state.activePinId, folderId);
-  }
+  };
+
+  const foldersNormalized = state.folders.map(folder => {
+    return ({
+      ...folder,
+      saved: folder.pins.includes(state.activePinId)
+    })
+  })
 
   useEffect(() => {
     fetchFoldersAction(dispatch);
@@ -48,12 +55,18 @@ export const ModalSavePin = ({ open }) => {
         }
       ]}>
       <ListGroup variant="flush">
-        {state.folders.map((folder, folderIndex) => (
+        {foldersNormalized.map((folder, folderIndex) => (
           <ListGroup.Item key={folderIndex}>
             <Row>
               <Col xs={8}>{folder.name}</Col>
               <Col xs={4} className="text-end">
-                <Button label="Salvar" loadingLabel="Salvando" onClick={() => handleClick(folder.id)} />
+                <Button
+                  label={folder.saved ? 'Salvo' : 'Salvar'}
+                  loadingLabel="Salvando"
+                  onClick={() => handleClick(folder.id)}
+                  variant={folder.saved ? 'secondary' : 'primary'}
+                  disabled={folder.saved}
+                />
               </Col>
             </Row>
           </ListGroup.Item>
