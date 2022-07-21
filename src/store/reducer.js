@@ -32,7 +32,6 @@ export function reducer(state, action) {
         type: types.openModalCreateFolderType,
         mode: 'createFolder'
       };
-    
     case types.saveFolderSuccessType:
       return {
         ...state,
