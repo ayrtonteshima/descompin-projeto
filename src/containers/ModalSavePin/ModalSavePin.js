@@ -6,7 +6,11 @@ import { Modal } from '../../components/Modal/Modal';
 import { Button } from '../../components/Button/Button';
 import { useAppContext } from '../../store/AppContext';
 import { closeModalsAction } from '../../store/actions';
-import { fetchFoldersAction, openModalCreateFolder } from '../../store/actions';
+import { 
+  fetchFoldersAction,
+  openModalCreateFolder,
+  savePinInFolderAction 
+} from '../../store/actions';
 
 export const ModalSavePin = ({ open }) => {
   const { state, dispatch } = useAppContext();
@@ -20,13 +24,14 @@ export const ModalSavePin = ({ open }) => {
     dispatch(openModalCreateFolder());
   };
 
+  const handleClick = (folderId) => {
+    savePinInFolderAction(dispatch, state.activePinId, folderId);
+  }
+
   useEffect(() => {
     fetchFoldersAction(dispatch);
   }, [])
 
-  useEffect(() => {
-    console.log(state);
-  }, [state])
 
   return (
     <Modal
@@ -47,7 +52,9 @@ export const ModalSavePin = ({ open }) => {
           <ListGroup.Item key={folderIndex}>
             <Row>
               <Col xs={8}>{folder.name}</Col>
-              <Col xs={4} className="text-end"><Button label="Salvar" loadingLabel="Salvando" /></Col>
+              <Col xs={4} className="text-end">
+                <Button label="Salvar" loadingLabel="Salvando" onClick={() => handleClick(folder.id)} />
+              </Col>
             </Row>
           </ListGroup.Item>
         ))}
