@@ -12,3 +12,6 @@ export const saveFolderType = 'saveFolder';
 
 export const savePinInFolderInitType = 'save pin in folder init';
 export const savePinInFolderSuccessType = 'save pin in folder success';
+
+export const fetchPinsInitType = 'fetch pins init';
+export const fetchPinsSuccessType = 'fetch pins success';
