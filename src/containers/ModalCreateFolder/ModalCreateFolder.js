@@ -15,8 +15,7 @@ export const ModalCreateFolder = ({ open }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Fez o submit', folderName)
-    saveFolderAction(dispatch, folderName);
+    saveFolderAction(dispatch, folderName, state.activePinId);
   };
 
   const handleChange = (e) => {
