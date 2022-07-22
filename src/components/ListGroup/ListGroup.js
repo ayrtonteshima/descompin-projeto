@@ -12,11 +12,9 @@ export const ListGroup = ({ items = [] }) => {
           <div className="ms-2 me-auto">
             <div className="fw-bold">{item.title}</div>
           </div>
-          {item.total ? (
-            <Badge bg="primary" pill>
-              {item.total}
-            </Badge>
-          ) : null}
+          <Badge bg="primary" pill>
+            {item.total}
+          </Badge>
         </ListGroupBS.Item>
       ))}
     </ListGroupBS>
